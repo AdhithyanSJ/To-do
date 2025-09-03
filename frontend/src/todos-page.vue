@@ -82,7 +82,8 @@ const newTodoText = ref('')
 const signout = () => {
   localStorage.removeItem('token')
   localStorage.removeItem('user_id')
-    window.location.href = '/login'
+this.$router.push('/login')
+
 }
 const fetchTodos = async () => {
     const token = localStorage.getItem('token')
