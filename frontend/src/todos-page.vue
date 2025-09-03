@@ -1,10 +1,10 @@
 <template>
-  <div class="todos-page">
+  <div class="todos-page" :class="{ dark: isDark }">
     <h1>Todo List</h1>
     
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button @click="toggleDark" class="btn btn-primary me-md-2" >
+  <button @click="toggleDark()" class="btn btn-primary me-md-2" >
     Toggle {{ isDark ? 'Light':'Dark' }} MOde
 </button>
   <button @click="signout" class="btn btn-primary" >signout</button>
@@ -82,7 +82,7 @@ const newTodoText = ref('')
 const signout = () => {
   localStorage.removeItem('token')
   localStorage.removeItem('user_id')
-  this.$router.push('/login') 
+    window.location.href = '/login'
 }
 const fetchTodos = async () => {
     const token = localStorage.getItem('token')
@@ -148,7 +148,13 @@ onMounted(() => {
 
 <style scoped>
 .todos-page {
-    background: #16171d;
-    color: #fff;}
+  background: #fff;
+  color: #000;
+}
+
+.todos-page.dark {
+  background: #16171d;
+  color: #fff;
+}
 
     </style>
