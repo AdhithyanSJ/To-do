@@ -73,7 +73,9 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import {useToggle,useDark} from '@vueuse/core'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 const todos = ref([])
@@ -82,7 +84,7 @@ const newTodoText = ref('')
 const signout = () => {
   localStorage.removeItem('token')
   localStorage.removeItem('user_id')
-this.$router.push('/login')
+router.push('/login')
 
 }
 const fetchTodos = async () => {
