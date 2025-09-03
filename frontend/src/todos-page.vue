@@ -86,7 +86,7 @@ const signout = () => {
 }
 const fetchTodos = async () => {
     const token = localStorage.getItem('token')
-  const res = await fetch(`http://to-do-t23j.onrender.com/api/todoslist/${localStorage.getItem('user_id')}`,{
+  const res = await fetch(`https://to-do-t23j.onrender.com/api/todoslist/${localStorage.getItem('user_id')}`,{
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ const fetchTodos = async () => {
 const addTodo = async () => {
     const token = localStorage.getItem('token')
   if (newTodoText.value.trim()=== '') return;
-  const res = await fetch(`http://to-do-t23j.onrender.com/api/todoslist/${localStorage.getItem('user_id')}`, {
+  const res = await fetch(`https://to-do-t23j.onrender.com/api/todoslist/${localStorage.getItem('user_id')}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ const addTodo = async () => {
 const markTodo = async (todo) => {
     const token = localStorage.getItem('token')
   
-  const res =  await fetch(`http://to-do-t23j.onrender.com/api/todoitem/${todo.tid}`, {
+  const res =  await fetch(`https://to-do-t23j.onrender.com/api/todoitem/${todo.tid}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ const markTodo = async (todo) => {
 }
 const removeTodo = async (todo) => {
     const token = localStorage.getItem('token')
-   const res = await fetch(`http://to-do-t23j.onrender.com/api/todoitem/${todo.tid}`, {
+   const res = await fetch(`https://to-do-t23j.onrender.com/api/todoitem/${todo.tid}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
