@@ -1,10 +1,10 @@
 from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
-from models import db, User
+from backend.models import db, User
 from flask_jwt_extended import JWTManager
 from werkzeug.security import generate_password_hash
-from controllers import signup, login, todoslist, todoitem
+from backend.controllers import signup, login, todoslist, todoitem
 
 app = Flask(__name__)
 api = Api(app)
