@@ -28,7 +28,7 @@ export default {
       try {
         console.log('Logging in with:', this.email, this.password);
        const post_data = {'email': this.email, 'password': this.password}
-        const response = await fetch('http://127.0.0.1:5000/api/login', {
+        const response = await fetch('http://to-do-t23j.onrender.com/api/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(post_data)
